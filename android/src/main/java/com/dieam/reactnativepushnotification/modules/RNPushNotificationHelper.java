@@ -866,8 +866,9 @@ public class RNPushNotificationHelper {
           channel == null && channel_name != null && channel_description != null ||
           channel != null &&
           (
-            channel_name != null && !channel.getName().equals(channel_name) ||
-            channel_description != null && !channel.getDescription().equals(channel_description)
+            channel_name != null && !channel.getName().equals(channel_name) /*||
+            this breaks app on Partner because of cordova plugin compatibility issues
+            channel_description != null && !channel.getDescription().equals(channel_description)*/
           )
         ) {
             // If channel doesn't exist create a new one.
